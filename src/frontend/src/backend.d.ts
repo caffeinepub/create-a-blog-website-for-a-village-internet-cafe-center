@@ -1,0 +1,41 @@
+import type { Principal } from "@icp-sdk/core/principal";
+export interface Some<T> {
+    __kind__: "Some";
+    value: T;
+}
+export interface None {
+    __kind__: "None";
+}
+export type Option<T> = Some<T> | None;
+export interface BlogPost {
+    id: bigint;
+    coverImageUrl?: string;
+    title: string;
+    content: string;
+    isPublished: boolean;
+    createdAt: Time;
+    slug: string;
+    updatedAt: Time;
+}
+export type Time = bigint;
+export interface UserProfile {
+    name: string;
+}
+export enum UserRole {
+    admin = "admin",
+    user = "user",
+    guest = "guest"
+}
+export interface backendInterface {
+    assignCallerUserRole(user: Principal, role: UserRole): Promise<void>;
+    createPost(title: string, slug: string, content: string, coverImageUrl: string | null): Promise<bigint>;
+    getAllPostsAdmin(): Promise<Array<BlogPost>>;
+    getCallerUserProfile(): Promise<UserProfile | null>;
+    getCallerUserRole(): Promise<UserRole>;
+    getPublishedPosts(): Promise<Array<BlogPost>>;
+    getUserProfile(user: Principal): Promise<UserProfile | null>;
+    isCallerAdmin(): Promise<boolean>;
+    saveCallerUserProfile(profile: UserProfile): Promise<void>;
+    togglePublishStatus(postId: bigint): Promise<void>;
+    updatePost(postId: bigint, title: string, slug: string, content: string, coverImageUrl: string | null): Promise<void>;
+}

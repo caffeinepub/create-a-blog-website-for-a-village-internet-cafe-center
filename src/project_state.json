@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Create a blog for the user's village internet cafe center.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Edit Images\n- Redesign the logo with a fresh, warm, friendly look suitable for a village internet cafe (cafe-logo.dim_512x512.png > cafe-logo-v2.dim_512x512.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-public-facing-blog-site-for-the-user-s-village-internet-cafe-center-with-the-following-pages-home-intro-highlights-blog-post-list-blog-post-detail-full-post-and-contact-location-basic-contact-info-and-address-text",
+      "title": "Create a public-facing blog site for the user's village internet cafe center with the following pages: Home (intro + highlights), Blog (post list), Blog Post Detail (full post), and Contact/Location (basic contact info and address text).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-admin-workflow-that-allows-the-cafe-owner-to-manage-blog-posts-from-the-frontend-using-internet-identity-authentication-sign-in-out-view-post-list-including-drafts-create-edit-posts-and-toggle-publish-status",
+      "title": "Add an admin workflow that allows the cafe owner to manage blog posts from the frontend using Internet Identity authentication: sign in/out, view post list (including drafts), create/edit posts, and toggle publish status.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-creative-visual-theme-for-the-entire-site-colors-typography-spacing-buttons-cards-suitable-for-a-friendly-local-village-internet-cafe-avoid-blue-purple-as-dominant-colors",
+      "title": "Apply a coherent, creative visual theme for the entire site (colors, typography, spacing, buttons, cards) suitable for a friendly local village internet cafe; avoid blue/purple as dominant colors.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-and-render-generated-static-image-assets-for-the-site-logo-and-hero-banner-from-frontend-public-assets-generated-and-use-them-on-home-and-in-the-site-header-footer",
+      "title": "Add and render generated static image assets for the site (logo and hero/banner) from frontend/public/assets/generated, and use them on Home and in the site header/footer.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-site-logo-with-a-new-logo-image-and-ensure-the-header-and-footer-display-the-updated-logo-correctly",
+      "title": "Replace the current site logo with a new logo image and ensure the header and footer display the updated logo correctly.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-all-frontend-references-that-currently-point-to-assets-generated-cafe-logo-dim-512x512-png-to-use-the-new-logo-asset-filename-while-keeping-existing-alt-text-unless-explicitly-changed",
+      "title": "Update all frontend references that currently point to \"/assets/generated/cafe-logo.dim_512x512.png\" to use the new logo asset filename (while keeping existing alt text unless explicitly changed).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a blog for the user's internet cafe center in a village",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Implement backend data storage for blog posts in the single Motoko actor, including: post id, title, slug, content (markdown or plain text), coverImageUrl (optional), createdAt, updatedAt, and isPublished flag.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Seed the app with at least 3 initial published blog posts relevant to a village internet cafe center (e.g., services, printing/scanning, online form help, exam/application support) so the blog is not empty on first load.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Update/replace the site's logo with a new design (regenerate and swap the logo asset used in header/footer and home).",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Create a blog website for a village internet cafe center",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

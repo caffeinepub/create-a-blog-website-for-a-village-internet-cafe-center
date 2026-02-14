@@ -1,0 +1,45 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-replace-the-current-site-logo-with-a-new-logo-image-and-ensure-the-header-and-footer-display-the-updated-logo-correctly",
+      "featureTitle": "Replace the current site logo with a new logo image and ensure the header and footer display the updated logo correctly.",
+      "files": [
+        "frontend/src/components/site/SiteFooter.tsx",
+        "frontend/src/components/site/SiteHeader.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-all-frontend-references-that-currently-point-to-assets-generated-cafe-logo-dim-512x512-png-to-use-the-new-logo-asset-filename-while-keeping-existing-alt-text-unless-explicitly-changed",
+      "featureTitle": "Update all frontend references that currently point to \"/assets/generated/cafe-logo.dim_512x512.png\" to use the new logo asset filename (while keeping existing alt text unless explicitly changed).",
+      "files": [
+        "frontend/src/components/site/SiteFooter.tsx",
+        "frontend/src/components/site/SiteHeader.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

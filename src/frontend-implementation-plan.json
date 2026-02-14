@@ -1,0 +1,54 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Update generated logo asset and switch header/footer references",
+  "requirements": [
+    {
+      "id": "REQ-7",
+      "summary": "Add the redesigned logo image asset and ensure the header and footer render the updated logo at the existing sizes without distortion.",
+      "acceptanceCriteria": [
+        "A new logo image exists under frontend/public/assets/generated and differs from the previous design.",
+        "Site header logo image renders the updated logo at the existing size (h-10 w-10) without distortion.",
+        "Site footer logo image renders the updated logo at the existing size (h-8 w-8) without distortion.",
+        "No other site functionality or routes are affected."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/cafe-logo-v2.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the newly generated logo image asset (fresh, warm, friendly redesign) as a static file served from public assets."
+        },
+        {
+          "path": "frontend/src/components/site/SiteHeader.tsx",
+          "operation": "modify",
+          "description": "Update the header logo <img> to use the new generated asset path while preserving the existing sizing classes (h-10 w-10) and object-contain so the logo is not distorted."
+        },
+        {
+          "path": "frontend/src/components/site/SiteFooter.tsx",
+          "operation": "modify",
+          "description": "Update the footer logo <img> to use the new generated asset path while preserving the existing sizing classes (h-8 w-8) and object-contain so the logo is not distorted."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Replace all frontend references to the old generated logo filename with the new logo filename while keeping existing alt text.",
+      "acceptanceCriteria": [
+        "All instances of the old logo path are updated (including SiteHeader and SiteFooter).",
+        "The application builds and runs with no missing-asset errors (no broken image icons for the logo)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/site/SiteHeader.tsx",
+          "operation": "modify",
+          "description": "Replace any remaining references to \"/assets/generated/cafe-logo.dim_512x512.png\" with \"/assets/generated/cafe-logo-v2.dim_512x512.png\" in the header, keeping the existing alt text unchanged."
+        },
+        {
+          "path": "frontend/src/components/site/SiteFooter.tsx",
+          "operation": "modify",
+          "description": "Replace any remaining references to \"/assets/generated/cafe-logo.dim_512x512.png\" with \"/assets/generated/cafe-logo-v2.dim_512x512.png\" in the footer, keeping the existing alt text unchanged."
+        }
+      ]
+    }
+  ]
+}

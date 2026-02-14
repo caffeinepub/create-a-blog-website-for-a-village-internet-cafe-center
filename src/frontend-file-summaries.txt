@@ -1,0 +1,19 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, defining all public and admin routes with a shared layout wrapper and theme provider.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including published posts, admin posts, user profiles, and post mutations (create, update, toggle publish).",
+  "frontend/src/components/site/SiteLayout.tsx": "Shared layout wrapper component that provides consistent header, main content area, and footer structure across all pages.",
+  "frontend/src/components/site/SiteHeader.tsx": "Responsive site header with updated logo (cafe-logo-v2), navigation links, login button, and mobile menu toggle.",
+  "frontend/src/components/site/SiteFooter.tsx": "Site footer with updated logo (cafe-logo-v2), cafe information, quick links, contact details, and attribution to caffeine.ai with UTM tracking.",
+  "frontend/src/components/auth/LoginButton.tsx": "Internet Identity login/logout button with loading states and query cache clearing on logout.",
+  "frontend/src/components/auth/ProfileSetupModal.tsx": "Modal dialog for first-time user profile setup to collect display name after Internet Identity login.",
+  "frontend/src/components/auth/AdminGate.tsx": "Route guard component that checks authentication and admin status, showing appropriate prompts or access denied messages.",
+  "frontend/src/pages/HomePage.tsx": "Landing page with hero section featuring banner image, services overview cards, and call-to-action sections.",
+  "frontend/src/pages/BlogListPage.tsx": "Public blog list page displaying all published posts with title, date, excerpt, and links to full posts.",
+  "frontend/src/pages/BlogPostDetailPage.tsx": "Individual blog post page showing full content with title, date, optional cover image, and back navigation.",
+  "frontend/src/pages/ContactPage.tsx": "Contact and location information page with service details, hours, and about section.",
+  "frontend/src/pages/admin/AdminDashboardPage.tsx": "Admin dashboard showing post statistics and quick links to manage posts and create new content.",
+  "frontend/src/pages/admin/AdminPostsListPage.tsx": "Admin posts management page listing all posts with edit and publish/unpublish actions.",
+  "frontend/src/pages/admin/AdminPostEditorPage.tsx": "Post creation and editing form with fields for title, slug, content, and optional cover image URL.",
+  "frontend/src/index.css": "Global styles with warm earth-tone OKLCH color system for light and dark modes, avoiding blue/purple dominance.",
+  "frontend/tailwind.config.js": "Tailwind configuration with warm color palette, custom fonts, and extended design tokens matching the earth-tone theme."
+}

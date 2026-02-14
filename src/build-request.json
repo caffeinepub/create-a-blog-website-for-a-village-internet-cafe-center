@@ -1,0 +1,68 @@
+{
+  "kind": "build_request",
+  "title": "Change site logo asset and update header/footer to use it",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-7",
+      "text": "Replace the current site logo with a new logo image and ensure the header and footer display the updated logo correctly.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Change the logo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A new logo image exists under frontend/public/assets/generated and differs from the previous design.",
+        "Site header logo image renders the updated logo at the existing size (h-10 w-10) without distortion.",
+        "Site footer logo image renders the updated logo at the existing size (h-8 w-8) without distortion.",
+        "No other site functionality or routes are affected."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Update all frontend references that currently point to \"/assets/generated/cafe-logo.dim_512x512.png\" to use the new logo asset filename (while keeping existing alt text unless explicitly changed).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Change the logo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All instances of the old logo path are updated (including SiteHeader and SiteFooter).",
+        "The application builds and runs with no missing-asset errors (no broken image icons for the logo)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/components/ui or other paths listed in frontend.immutablePaths.",
+    "Keep static image assets served from frontend/public/assets/generated (do not route images through the backend)."
+  ],
+  "nonGoals": [
+    "Changing the site name text (e.g., \"Village Cafe\") or navigation labels.",
+    "Changing the hero banner image or overall site theme.",
+    "Backend changes or data migrations."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": [
+      "Redesign the logo with a fresh, warm, friendly look suitable for a village internet cafe (cafe-logo.dim_512x512.png > cafe-logo-v2.dim_512x512.png)"
+    ]
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

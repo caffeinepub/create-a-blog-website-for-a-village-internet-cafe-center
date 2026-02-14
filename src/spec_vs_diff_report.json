@@ -1,0 +1,49 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-14T04:39:21.169Z",
+  "summary": "Header and footer logo image paths were updated to the new v2 filename, but the diff does not show the new logo asset being added under frontend/public/assets/generated, and it’s not verifiable from the provided changes that *all* references to the old logo path across the frontend were updated. The footer also includes several content/attribution changes not requested by the BuildRequest.",
+  "missing_requirements": [
+    {
+      "id": "REQ-7",
+      "requirement": "A new logo image exists under frontend/public/assets/generated and differs from the previous design.",
+      "reason": "The diff shows only TypeScript/TSX changes; no new/updated image asset under frontend/public/assets/generated is included, so the new logo file’s existence/design change cannot be confirmed.",
+      "evidence": [
+        "<no changes shown under frontend/public/assets/generated in diff summary>"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "requirement": "Update all frontend references that currently point to \"/assets/generated/cafe-logo.dim_512x512.png\" to use the new logo asset filename.",
+      "reason": "Only SiteHeader and SiteFooter were updated in the diff. The change does not provide evidence that there are no other references elsewhere (e.g., other components/pages) that still use the old path.",
+      "evidence": [
+        "frontend/src/components/site/SiteHeader.tsx",
+        "frontend/src/components/site/SiteFooter.tsx",
+        "frontend-file-summaries.txt (lists many other frontend files not shown as modified)"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Footer content changes unrelated to swapping the logo (added caffeine.ai attribution link with UTM tracking and hostname-based appIdentifier, and a “Built with ❤️” line).",
+      "reason": "BuildRequest is limited to replacing the logo asset and updating references; it explicitly lists non-goals about changing other site content/routes. These footer attribution/marketing changes are not requested.",
+      "evidence": [
+        "frontend/src/components/site/SiteFooter.tsx"
+      ]
+    },
+    {
+      "description": "Added social icon imports (SiX, SiFacebook) that are not used in the shown footer JSX.",
+      "reason": "Not requested by BuildRequest and appears unrelated to logo swap; also potentially introduces lint/build issues depending on configuration.",
+      "evidence": [
+        "frontend/src/components/site/SiteFooter.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/components/site/SiteFooter.tsx",
+    "frontend/src/components/site/SiteHeader.tsx",
+    "project_state.json"
+  ]
+}
